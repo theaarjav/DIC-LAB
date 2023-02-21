@@ -1,0 +1,20 @@
+*Design
+vin in 0 pulse (5 -5 10n 0n 0n 30n 50n)
+r1 in out 10.1k
+D1 OUT 0 diode
+
+*Stimulation
+.tran 1ns 150ns
+
+*Plotting
+.control
+run
+set color0=white
+plot v(in),v(out)
+plot -I(vin)
+set hcopydevtype=postscript
+hardcopy rc1.ps v(out) v(in) I(vin)
+.endc
+.end
+
+.model diode D(N=2 IS=1E-12 RS=10 CJ0=5p TT=10n VI=1 BV=10)

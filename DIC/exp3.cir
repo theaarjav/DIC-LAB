@@ -1,0 +1,21 @@
+*Design
+Va va 0 5v
+Vcc vcc 0 5v
+Ra va intb1 10.1k
+Rc vcc vout 1.01k
+Q1 vout intb1 0 transistor
+
+*Stimulatoin
+.DC va 0 5 0.01
+
+*Plotting VTC curve
+.control
+run
+set color0=white
+plot v(vout)
+set hcopydevtype=postscript
+hardcopy rc1.ps v(vout)
+.endc
+.end
+
+.model transistor npn Q(BF=20)

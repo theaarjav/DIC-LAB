@@ -1,0 +1,18 @@
+*diode reverse characteristics
+.model mode1 d(n=2 Is=1E-12 Rs=10 Cjo=5p Tt=10n Vj=1 Bv=10)
+
+vin 1 0 pulse (5 -3 10n 0.05n 0.05n 30n 50n) 
+d1 2 0 mode1
+r1 1 2 9.1k
+
+*simulation
+.tran 1n 50n
+
+.control
+run
+set color0=white
+set xbrushwidth=3.5
+plot v(1) v(2)
+plot -i(vin)
+.endc
+.end

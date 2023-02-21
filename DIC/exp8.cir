@@ -1,0 +1,25 @@
+*Design
+vcc vcc 0 0
+vin vin 0 -0.2v
+vr vr 0 -2.125
+
+Rc1 vcc vout1 500
+Rc2 vcc vout2 500
+Q1 vout1 vin vx transistor
+Q2 vout2 vr vx transistor
+Re vx vee 6.2467k
+vee vee 0 -5.2
+
+.DC vin -3.3 0.6 0.01
+
+.control
+run
+set color0=white
+set color1=gray
+set color2=blue
+plot v(vout1) v(vout2)
+set hcopydevtype=postscript
+hardcopy rc1.ps v(vout1)
+.endc
+.end
+.model transistor npn (BF=20.2)

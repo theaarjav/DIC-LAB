@@ -1,0 +1,10 @@
+.include cmos_130nm.txt
+M1 d g sc sc PMOS W=0.25u L=0.13u Vds d 0 0
+Vgs g 0 -1.2
+Vss sc 0 1.2
+
+.dc Vds -1.5 1.5 0.2
+.control run
+set color0 = white set xbrushwidth = 3.5 plot i(Vss)
+.endc
+.end

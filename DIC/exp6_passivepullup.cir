@@ -1,0 +1,23 @@
+* Design
+Va va 0 pulse (0 5 150p 10p 10p 180p 500p)
+Vb vb 0 pulse (0 5 150p 10p 10p 490p 1000p)
+Vcc vcc 0 5v
+Q1a b2 b1 va transistor
+Q1b b2 b1 vb transistor
+Q2 c2 b2 e2 transistor
+Q3 vout e2 0 transistor
+Rb1 vcc b1 9.6k
+Rc1 vcc c2 0.96k
+Rb2 e2 0 9.6k
+Rc2 vcc vout 0.096k
+.tran 1ps 1000ps
+.control
+run
+set color0=white
+plot v(va) v(vb)
+plot v(vout)
+set hcopydevtype=postscript
+hardcopy rc1.ps v(vout) v(va) v(vb)
+.endc
+.end
+.model transistor npn Q(BF=19.2)

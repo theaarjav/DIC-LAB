@@ -1,0 +1,25 @@
+*Design
+
+v1 3 7 1
+v2 4 7 1
+ve 6 7 -5
+vcc 0 7 5
+
+r1 0 out1 5k
+r2 0 out2 3.861k
+r3 5 6 0.9k
+
+q1 out1 3 5 transistor
+q2 out2 4 5 transistor
+
+.dc v1 0 1.6 0.01
+
+.control
+run
+plot v(out1) v(out2)
+set hcopydevtype=postscript
+*hardcopy ecl_vin.ps v(1)
+.endc
+.end
+
+.model transistor npn(Bf=20.2)

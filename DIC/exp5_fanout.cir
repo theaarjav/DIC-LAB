@@ -1,0 +1,48 @@
+*TTL inverter fanout
+.model transistor npn Q(BF=20.2)
+Vcc vcc 0 5v
+Vin vin 0 5v
+.subckt ttlfanout vcc 0 ip op
+Q1 b b1 ip transistor
+Q2 op b 0 transistor
+Rc vcc op 1.01k
+Rb vcc b1 10k
+.ends ttlfanout
+x1 vcc 0 vin vout ttlfanout
+x2 vcc 0 vout vout1 ttlfanout
+x3 vcc 0 vout vout2 ttlfanout
+x4 vcc 0 vout vout3 ttlfanout
+x5 vcc 0 vout vout4 ttlfanout
+x6 vcc 0 vout vout5 ttlfanout
+x7 vcc 0 vout vout6 ttlfanout
+x8 vcc 0 vout vout7 ttlfanout
+x9 vcc 0 vout vout8 ttlfanout
+x10 vcc 0 vout vout9 ttlfanout
+x11 vcc 0 vout vout10 ttlfanout
+x12 vcc 0 vout vout11 ttlfanout
+x13 vcc 0 vout vout12 ttlfanout
+x14 vcc 0 vout vout13 ttlfanout
+x15 vcc 0 vout vout14 ttlfanout
+x16 vcc 0 vout vout15 ttlfanout
+x17 vcc 0 vout vout16 ttlfanout
+x18 vcc 0 vout vout17 ttlfanout
+x19 vcc 0 vout vout18 ttlfanout
+x20 vcc 0 vout vout19 ttlfanout
+x21 vcc 0 vout vout20 ttlfanout
+x22 vcc 0 vout vout21 ttlfanout
+x23 vcc 0 vout vout22 ttlfanout
+x24 vcc 0 vout vout23 ttlfanout
+x25 vcc 0 vout vout24 ttlfanout
+x26 vcc 0 vout vout25 ttlfanout
+x27 vcc 0 vout vout26 ttlfanout
+x28 vcc 0 vout vout27 ttlfanout
+x29 vcc 0 vout vout28 ttlfanout
+.DC vin 0 5 0.01
+.control
+run
+set color0=white
+plot v(vout)
+set hcopydevtype=postscript
+hardcopy rc1.ps v(vout)
+.endc
+.end

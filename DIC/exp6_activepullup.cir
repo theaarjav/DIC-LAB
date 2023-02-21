@@ -1,0 +1,23 @@
+*Design Va va 0 5v 
+Vb vb 0 5v
+Vcc vcc 0 5v
+
+Q1a b2 b1 va transistor 
+Q1b b2 b1 vb transistor
+ 
+Q2 c2 b2 e2 transistor 
+Q3 vcc c2 vout transistor 
+Q4 vout e2 0 transistor 
+Rb1 vcc b1 10.1k
+Rc1 vcc c2 1.01k 
+Re2 e2 0 10.1k
+
+.DC vb 0 5 0.01
+
+.control run
+plot v(vout)
+set hcopydevtype=postscript 
+hardcopy rc1.ps v(vout)
+.endc
+.end
+.model transistor npn Q(BF=20.2)

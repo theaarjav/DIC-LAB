@@ -1,0 +1,19 @@
+
+vin1 a 0 pulse(0 5.101 100ps 50ps 50ps 200ps 500ps)
+vin2 b 0 pulse(0 5.101 200ps 50ps 50ps 200ps 500ps)
+vcc vcc 0 5v
+rb1 a c 10.1k
+rb2 b f 10.1k
+rc vcc d 1.01k
+q1 d c e bjt
+q2 e f 0 bjt 
+.tran 20ps 1500ps
+.control
+run
+set color0=white
+plot v(a) v(b)
+plot v(d)
+.endc
+.end
+
+.model bjt npn (Bf=20.101)
