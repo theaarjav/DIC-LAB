@@ -1,0 +1,14 @@
+*Pseudo load
+.include cmos_90nm.txt
+
+M1 d1 0 intb d1 PMOS w=0.5u l=0.09u
+M2 intb g2 0 0  NMOS w=1u l=0.09u
+vdd d1 0 1.2v
+vgs g2 0 1.2
+
+.control
+dc Vgs 0 1.2 0.01
+
+plot v(intb), v(g2)
+.endc
+.end
