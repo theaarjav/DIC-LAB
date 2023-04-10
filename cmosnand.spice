@@ -1,0 +1,15 @@
+* SPICE3 file created from cmosnand.ext - technology: scmos
+
+.option scale=1u
+
+M1000 a_n10_n17# va_101 vout_101 Gnd nfet w=4 l=2
++  ad=64 pd=40 as=32 ps=24
+M1001 vdd_101 vb_101 vout_101 vdd_101 pfet w=7 l=2
++  ad=112 pd=60 as=112 ps=46
+M1002 gnd_101 vb_101 a_n10_n17# Gnd nfet w=4 l=2
++  ad=32 pd=24 as=0 ps=0
+M1003 vout_101 va_101 vdd_101 vdd_101 pfet w=7 l=2
++  ad=0 pd=0 as=0 ps=0
+C0 vout_96 Gnd 6.20fF
+C1 vb_96 Gnd 6.01fF
+C2 va_96 Gnd 6.01fF
