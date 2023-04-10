@@ -59,9 +59,9 @@ rect 12 -25 16 -21
 << nsubstratencontact >>
 rect -4 14 0 18
 << labels >>
-rlabel psubstratepcontact 12 -25 16 -25 8 gnd_96
-rlabel metal1 -24 -3 -24 1 3 vout_96
-rlabel nsubstratencontact -4 18 0 18 5 vdd_96
-rlabel metal1 12 -10 12 -6 1 vb_96
-rlabel metal1 -6 -10 -6 -6 1 va_96
+rlabel psubstratepcontact 12 -25 16 -25 8 gnd_101
+rlabel metal1 -24 -3 -24 1 3 vout_101
+rlabel nsubstratencontact -4 18 0 18 5 vdd_101
+rlabel metal1 12 -10 12 -6 1 vb_101
+rlabel metal1 -6 -10 -6 -6 1 va_101
 << end >>
